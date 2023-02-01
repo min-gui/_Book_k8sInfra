@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  N = 3 # max number of worker nodes
+  N = 2 # max number of worker nodes
   Ver = '1.18.4' # Kubernetes Version to install
 
   #=============#
@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       cfg.vm.provider "virtualbox" do |vb|
         vb.name = "m-k8s(github_SysNet4Admin)"
         vb.cpus = 2
-        vb.memory = 3072
+        vb.memory = 2560
         vb.customize ["modifyvm", :id, "--groups", "/k8s-SgMST-1.13.1(github_SysNet4Admin)"]
       end
       cfg.vm.host_name = "m-k8s"
